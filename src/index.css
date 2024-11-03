@@ -1,0 +1,113 @@
+/* src/index.css */
+
+/* Reset de margens e preenchimentos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Cor de fundo clara */
+  color: #333; /* Cor do texto padrão */
+}
+
+/* Container principal para centralizar o conteúdo */
+.container {
+  min-height: 100vh; /* Altura mínima para ocupar toda a tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos do cartão */
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff; /* Fundo do cartão */
+  padding: 20px; /* Espaçamento interno */
+  width: 100%;
+  max-width: 600px; /* Largura máxima do cartão */
+}
+
+/* Estilo das tabelas */
+.table {
+  border-radius: 15px;
+  overflow: hidden; /* Para bordas arredondadas */
+}
+
+.table th,
+.table td {
+  vertical-align: middle; /* Centraliza o conteúdo verticalmente */
+}
+
+.table th {
+  background-color: #007bff; /* Cor de fundo para cabeçalhos */
+  color: white; /* Cor do texto nos cabeçalhos */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2; /* Alterna cores nas linhas da tabela */
+}
+
+/* Estilos dos botões */
+.btn {
+  transition: background-color 0.3s, color 0.3s; /* Efeito de transição suave */
+}
+
+.btn-success {
+  background-color: #28a745; /* Cor de fundo verde */
+  color: white; /* Cor do texto */
+}
+
+.btn-success:hover {
+  background-color: #218838; /* Cor ao passar o mouse */
+}
+
+/* Estilos para cabeçalhos */
+h1, h2 {
+  font-family: 'Verdana', sans-serif;
+  margin-bottom: 20px; /* Espaçamento abaixo dos cabeçalhos */
+}
+
+/* Estilos responsivos */
+@media (max-width: 576px) {
+  .card {
+    padding: 15px; /* Espaçamento menor em telas pequenas */
+  }
+
+  h1 {
+    font-size: 24px; /* Tamanho da fonte menor em telas pequenas */
+  }
+
+  h2 {
+    font-size: 20px; /* Tamanho da fonte menor em telas pequenas */
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    padding: 20px; /* Espaçamento interno em telas maiores */
+  }
+}
+
+/* Estilos de formatação para inputs e labels */
+.form-label {
+  font-weight: bold; /* Destaca o texto do label */
+}
+
+.form-control {
+  border-radius: 5px; /* Borda arredondada para campos de entrada */
+}
+
+/* Estilo para feedback visual */
+.text-danger {
+  color: #dc3545; /* Cor vermelha para mensagens de erro */
+}
+
+.text-success {
+  color: #28a745; /* Cor verde para mensagens de sucesso */
+}
