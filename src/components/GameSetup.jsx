@@ -1,10 +1,12 @@
 // src/components/GameSetup.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importando useNavigate
 
 function GameSetup({ onTeamSelect }) {
   const [gameMode, setGameMode] = useState('1x1');
   const [teams, setTeams] = useState(['', '', '', '', '']);
-  const maxTeams = gameMode === 'championship' ? 5 : 2;
+  const maxTeams = gameMode === 'championship' ? 6 : 2;
+  const navigate = useNavigate(); // Usando useNavigate
 
   const handleTeamChange = (index, value) => {
     const updatedTeams = [...teams];
@@ -16,24 +18,25 @@ function GameSetup({ onTeamSelect }) {
     e.preventDefault();
     const selectedTeams = teams.filter((team) => team.trim() !== '');
     onTeamSelect(selectedTeams, gameMode);
+    navigate('/schedule'); // Redirecionando para a tela de agendamento após a seleção das equipes
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card p-4" style={{ width: '100%', maxWidth: '600px' }}>
-        <h2 className="text-center">Setup Game</h2>
+    <div className="container-fluid d-flex justify-content-center align-items-center">
+      <div className="card p-4" style={{ maxWidth: '600px' }}>
+        <h2 className="text-center">Configuração</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label className="form-label">Game Mode:</label>
+            <label className="form-label">Escolha o modo:</label>
             <select className="form-select" value={gameMode} onChange={(e) => setGameMode(e.target.value)}>
               <option value="1x1">1 vs 1</option>
               <option value="2x2">2 vs 2</option>
-              <option value="championship">Championship</option>
+              <option value="championship">Campeonato</option>
             </select>
           </div>
           {Array.from({ length: maxTeams }).map((_, i) => (
             <div key={i} className="mb-3">
-              <label className="form-label">Team {i + 1}:</label>
+              <label className="form-label">Equipe {i + 1}:</label>
               <input
                 type="text"
                 className="form-control"

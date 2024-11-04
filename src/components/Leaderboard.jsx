@@ -8,16 +8,16 @@ function Leaderboard({ leaderboard }) {
 
   return (
     <div className="container vh-100 d-flex flex-column justify-content-center">
-      <h2 className="text-center mb-4">Leaderboard</h2>
+      <h2 className="text-center mb-4">Tabela</h2>
       <table className="table table-striped table-hover">
         <thead>
           <tr>
-            <th>Team</th>
-            <th>Games</th>
-            <th>Wins</th>
-            <th>Draws</th>
-            <th>Losses</th>
-            <th>Win %</th>
+            <th>Equipes</th>
+            <th>Jogos</th>
+            <th>Vitorias</th>
+            <th>Empates</th>
+            <th>Derrotas</th>
+            <th>Estatistica %</th>
           </tr>
         </thead>
         <tbody>
